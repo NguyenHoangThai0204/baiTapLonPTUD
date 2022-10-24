@@ -303,8 +303,7 @@ public class FRMQuanLi extends javax.swing.JFrame{
         // TODO add your handling code here:
         xoaMauButton();
         jLayeredPane1.removeAll();
-        jButtonNhanVien.setBackground(new Color(255,0,255
-        ));
+        jButtonNhanVien.setBackground(new Color(255,0,255));
         setTitle("Quản lí nhân viên");
         nhanVien = new FRMNhanVien();
         jLayeredPane1.add(nhanVien.getNhanVien());
