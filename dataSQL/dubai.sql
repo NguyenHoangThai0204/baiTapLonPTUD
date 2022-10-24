@@ -1,4 +1,4 @@
-USE [master]
+﻿USE [master]
 GO
 CREATE DATABASE [KaraokeDubai]
 GO
@@ -24,9 +24,9 @@ CREATE TABLE [dbo].[ChiTietDonDatPhong](
 	[maDonDatPhong] [nvarchar](50) NOT NULL,
 	[soLuong] [int] NULL,
 	ngayDen date ,
-	gioDen date,
+	gioDen time,
 	[maPhong] [nvarchar](50) NOT NULL,
-	trangThai [nvarchar](50) 
+	trangThaiDDP [nvarchar](50) NOT NULL
  CONSTRAINT [PK_ChiTietDonDatPhong] PRIMARY KEY CLUSTERED 
 (
 	[maDonDatPhong] ASC,
@@ -42,9 +42,9 @@ CREATE TABLE [dbo].[ChiTietHD](
 	[maMH] [nvarchar](50) NOT NULL,
 	[maPhong]  [nvarchar](50) NOT NULL,
 	[soLuong] [int] NULL,
-	gioVao date,
-	gioRa date,
-	trangThaiCTHD  [nvarchar](50) 
+	gioVao time,
+	gioRa time,
+	trangThaiCTHD [nvarchar](50) NOT NULL
 
  CONSTRAINT [PK_ChiTietHD] PRIMARY KEY CLUSTERED 
 (
@@ -82,7 +82,6 @@ CREATE TABLE [dbo].[HoaDon](
 	[tenNV] [nvarchar](50) ,
 	[ngayLap] [date] NULL,
 	[phuThu] [nvarchar](255) NULL,
-	tienThua float(50)
 	
  CONSTRAINT [PK_HoaDon] PRIMARY KEY CLUSTERED 
 (
@@ -269,4 +268,64 @@ GO
 ALTER TABLE [dbo].[Phong] CHECK CONSTRAINT [FK_Phong_LoaiPhong]
 GO
 
+use KaraokeDubai
 
+/*1.Thêm loại khách hàng*/
+insert into [dbo].[LoaiKH] values ('LKH001',N'Khách hàng thường')
+
+select * from LoaiKH
+
+/*2.Thêm loại mặt hàng*/
+insert into [dbo].[LoaiMH] values ('LMH001',N'Đồ uống')
+
+select * from LoaiMH
+
+/*3.Thêm loại phòng*/
+insert into [dbo].[LoaiPhong] values ('LP001',N'Phòng VIP')
+
+select * from [LoaiPhong]
+
+/*4.Thêm mặt hàng*/
+insert into [dbo].[MatHang] values ('MH001','LMH001','Coca Cola',100,10000 )
+
+select * from [dbo].[MatHang]
+
+/*5.Thêm tài khoản*/
+insert into [dbo].[TaiKhoan] values ('TK001','20009931')
+
+select * from [dbo].[TaiKhoan]
+
+/*6.Thêm nhân viên*/
+insert into [dbo].[NhanVien] values ('NV001','TK001',N'Nguyễn Hoàng Thái',N'Quản lí',N'Nam','2002-04-02',N'Đồng Phú - Long Hồ - Vĩnh Long','0703328743','312312312',20000000,'Full ca',N'Đang làm việc')
+
+select * from [dbo].[NhanVien]
+
+/*7.Thêm khách hàng*/
+insert into [dbo].[KhachHang] values ('KH001','LKH001',N'Nguyễn Thái Hoàng','0703328743','312312312',N'Đồng Phú - Long Hồ - Vĩnh Long','2002-04-02',N'Nam',5,'2021-01-02')
+
+select * from [dbo].[KhachHang]
+
+/*8.Thêm hoá đơn*/
+insert into [dbo].[HoaDon] values ('HD001','KH001',N'Nguyễn Thái Hoàng','NV001',N'Nguyễn Hoàng Thái','2022-04-02',N'Ngày thường')
+
+select * from [dbo].[HoaDon]
+
+/*9.Thêm phòng*/
+insert into [dbo].[Phong] values ('P001','LP001',N'Trống',600000,10,N'Đầy đủ tiện nghi')
+
+select * from [dbo].[Phong]
+
+/*10.Thêm chi tiết hoá đơn*/
+insert into [dbo].[ChiTietHD] values ('HD001','MH001','P001',2,N'10:30:00',N'12:30:00',N'Đã thanh toán')
+
+select * from [dbo].[ChiTietHD]
+
+/*11.Thêm đơn đặt phòng*/
+insert into [dbo].[DonDatPhong] values ('DDP001','NV001','KH001','2002-04-02')
+
+select * from [dbo].[DonDatPhong]
+
+/*12.Thêm chi tiết đơn đặt phòng*/
+insert into [dbo].[ChiTietDonDatPhong] values ('DDP001',12,'2002-04-02',N'10:30:00','P001',N'Đã trả phòng')
+
+select * from [dbo].[ChiTietDonDatPhong]
