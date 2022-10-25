@@ -32,6 +32,10 @@ public class KhachHang {
 		super();
 		// TODO Auto-generated constructor stub
 	}
+	public KhachHang(String maKhangHang) {
+		super();
+		this.maKH = maKhangHang;
+	}
 	@Override
 	public String toString() {
 		return "KhachHang [maKhangHang=" + maKH + ", tenKH=" + tenKH + ", diaChi=" + diaChi + ", sdt=" + sdt
