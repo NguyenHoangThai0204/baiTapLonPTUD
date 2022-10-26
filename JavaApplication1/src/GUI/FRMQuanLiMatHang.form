@@ -187,12 +187,17 @@
                                                   <Component id="txtMaNV" max="32767" attributes="0"/>
                                                   <Component id="txtHoTen" alignment="0" max="32767" attributes="0"/>
                                                   <Component id="txtSDT" alignment="0" max="32767" attributes="0"/>
-                                                  <Component id="txtDiaChi" alignment="0" max="32767" attributes="0"/>
                                               </Group>
                                           </Group>
-                                          <Group type="102" attributes="0">
+                                          <Group type="102" alignment="0" attributes="0">
                                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                              <Component id="txtDiaChi1" max="32767" attributes="0"/>
+                                              <Group type="103" groupAlignment="0" attributes="0">
+                                                  <Group type="102" attributes="0">
+                                                      <Component id="jComboLoaiMatHang" min="-2" max="-2" attributes="0"/>
+                                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                                  </Group>
+                                                  <Component id="txtDiaChi1" max="32767" attributes="0"/>
+                                              </Group>
                                           </Group>
                                       </Group>
                                   </Group>
@@ -235,9 +240,9 @@
                           <Component id="jLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="txtDiaChi" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
-                          <Component id="jLabel8" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
+                          <Component id="jComboLoaiMatHang" min="-2" pref="34" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="1" attributes="0">
@@ -254,7 +259,7 @@
                           <Component id="btnLamMoiMH" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="btnXoaMH" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="19" max="32767" attributes="0"/>
+                      <EmptySpace pref="15" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -290,8 +295,6 @@
               </Events>
             </Component>
             <Component class="javax.swing.JTextField" name="txtSDT">
-            </Component>
-            <Component class="javax.swing.JTextField" name="txtDiaChi">
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel16">
               <Properties>
@@ -367,6 +370,21 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="X&#xf3;a"/>
               </Properties>
+            </Component>
+            <Component class="javax.swing.JComboBox" name="jComboLoaiMatHang">
+              <Properties>
+                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                  <StringArray count="4">
+                    <StringItem index="0" value="N&#x1b0;&#x1edb;c ng&#x1ecd;t"/>
+                    <StringItem index="1" value="B&#xe1;nh"/>
+                    <StringItem index="2" value="Tr&#xe1;i c&#xe2;y"/>
+                    <StringItem index="3" value="Bia"/>
+                  </StringArray>
+                </Property>
+              </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+              </AuxValues>
             </Component>
           </SubComponents>
         </Container>

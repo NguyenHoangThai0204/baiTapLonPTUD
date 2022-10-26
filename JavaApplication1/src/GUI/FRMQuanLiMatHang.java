@@ -46,7 +46,6 @@ public class FRMQuanLiMatHang extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         txtHoTen = new javax.swing.JTextField();
         txtSDT = new javax.swing.JTextField();
-        txtDiaChi = new javax.swing.JTextField();
         jLabel16 = new javax.swing.JLabel();
         txtMaNV = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
@@ -56,6 +55,7 @@ public class FRMQuanLiMatHang extends javax.swing.JFrame {
         btnSuaMH = new javax.swing.JButton();
         btnLamMoiMH = new javax.swing.JButton();
         btnXoaMH = new javax.swing.JButton();
+        jComboLoaiMatHang = new javax.swing.JComboBox<>();
         jPanel4 = new javax.swing.JPanel();
         jLabel14 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
@@ -138,6 +138,8 @@ public class FRMQuanLiMatHang extends javax.swing.JFrame {
         btnXoaMH.setIcon(new javax.swing.ImageIcon("D:\\PhatTrienUngDung\\baiTapLonCKPTUD\\iCon\\delete.png")); // NOI18N
         btnXoaMH.setText("Xóa");
 
+        jComboLoaiMatHang.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Nước ngọt", "Bánh", "Trái cây", "Bia" }));
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
@@ -163,11 +165,14 @@ public class FRMQuanLiMatHang extends javax.swing.JFrame {
                                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(txtMaNV)
                                             .addComponent(txtHoTen)
-                                            .addComponent(txtSDT)
-                                            .addComponent(txtDiaChi)))
+                                            .addComponent(txtSDT)))
                                     .addGroup(jPanel3Layout.createSequentialGroup()
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(txtDiaChi1))))
+                                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                                .addComponent(jComboLoaiMatHang, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGap(0, 0, Short.MAX_VALUE))
+                                            .addComponent(txtDiaChi1)))))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(btnLamMoiMH, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -196,9 +201,9 @@ public class FRMQuanLiMatHang extends javax.swing.JFrame {
                     .addComponent(txtSDT, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel7))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtDiaChi, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel8))
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel8)
+                    .addComponent(jComboLoaiMatHang, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -211,7 +216,7 @@ public class FRMQuanLiMatHang extends javax.swing.JFrame {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnLamMoiMH)
                     .addComponent(btnXoaMH))
-                .addContainerGap(19, Short.MAX_VALUE))
+                .addContainerGap(15, Short.MAX_VALUE))
         );
 
         jLabel14.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -435,6 +440,7 @@ public class FRMQuanLiMatHang extends javax.swing.JFrame {
     private javax.swing.JButton btnSuaMH;
     private javax.swing.JButton btnThemMH;
     private javax.swing.JButton btnXoaMH;
+    private javax.swing.JComboBox<String> jComboLoaiMatHang;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
@@ -463,7 +469,6 @@ public class FRMQuanLiMatHang extends javax.swing.JFrame {
     private javax.swing.JPanel jpnSapXep1;
     private javax.swing.JTextField txtCCCD2;
     private javax.swing.JTextField txtCCCD3;
-    private javax.swing.JTextField txtDiaChi;
     private javax.swing.JTextField txtDiaChi1;
     private javax.swing.JTextField txtHoTen;
     private javax.swing.JTextField txtMaNV;
