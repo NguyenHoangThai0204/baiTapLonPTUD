@@ -4,9 +4,11 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 
 import Connect.ConnectDB;
+import Entity.ChiTietDDP;
 import Entity.DonDatPhong;
 import Entity.NhanVien;
 import Entity.KhachHang;
@@ -69,6 +71,46 @@ public ArrayList<DonDatPhong> getAllDanhSachDDP() {
 	}
 	return lsDDP;
 }
+// sai rồi 
+public DonDatPhong getDDPTheoMaPhong(String ma){
+	DonDatPhong ddp = new DonDatPhong();
+	ChiTietDDP ctddp = new ChiTietDDP();
+	ConnectDB.getinstance();
+	Connection con = ConnectDB.getConnection();
+//	String sql = "SELECT DonDatPhong.*\r\n"
+//			+ "FROM  DonDatPhong\r\n"
+//			+ "where maPhong = N'"+ma+"' and TrangThaiDDP = N'Đã xác nhận'"
+//			+ "";
+	String sql = "select * from ChiTietDonDatPhong ctd \r\n"
+			+ "join DonDatPhong ddp \r\n"
+			+ "on ctd.maDonDatPhong = ddp.maDonDatPhong\r\n"
+			+ "where ctd.trangThaiDDP = N'Đã trả phòng'";
+	try {
+		Statement stm = con.createStatement();
+		ResultSet rs = stm.executeQuery(sql);
+		while(rs.next()) {
+			
+			ddp.setMaDonDatPhong(rs.getString(1));
+			
+			
+//			ddp.setMaDDP(rs.getNString(1));
+//			ddp.setPhong(new Phong(rs.getNString(2)));
+//			ddp.setKhachHang(new KhachHang(rs.getNString(3)));
+//			ddp.setNhanVien(new NhanVien(rs.getNString(4)));
+//			ddp.setNgayLap(rs.getDate(5));
+//			ddp.setGioDen(rs.getTime(6));
+//			ddp.setNgayDen(rs.getDate(7));
+//			ddp.setTrangThaiDDP(rs.getNString(8));
+		}
+	} catch (SQLException e) {
+		e.printStackTrace();
+	}
+	return ddp;
+}
+
+
+
+
 
 
 	
